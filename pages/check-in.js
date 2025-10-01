@@ -6,7 +6,7 @@ export default function CheckIn() {
   const [filtered, setFiltered] = useState([]);
   const [checkedIn, setCheckedIn] = useState([]);
   const [status, setStatus] = useState("");
-  const [creating, setCreating] = useState(false); // Are we creating a new nickname?
+  const [creating, setCreating] = useState(false);
 
   const today = new Date().toISOString().slice(0, 10);
 
@@ -67,7 +67,7 @@ export default function CheckIn() {
     if (!nickname) return setStatus("❌ Enter your nickname");
 
     if (!nicknames.includes(nickname)) {
-      setCreating(true); // Ask to create nickname
+      setCreating(true);
       return;
     }
 
@@ -93,8 +93,8 @@ export default function CheckIn() {
   };
 
   return (
-    <div style={{ padding: "2rem", fontFamily: "sans-serif" }}>
-      <h1>Rehearsal Check-in</h1>
+    <div style={{ padding: "2rem", fontFamily: "Inter, sans-serif", backgroundColor: "#f4f4f9" }}>
+      <h1 style={{ color: "#4B3F72" }}>Rehearsal Check-in</h1>
 
       {creating ? (
         <>
@@ -103,9 +103,18 @@ export default function CheckIn() {
             type="text"
             value={nickname}
             onChange={(e) => setNickname(e.target.value)}
-            style={{ padding: "0.5rem", marginRight: "1rem" }}
+            style={{ padding: "0.5rem", marginRight: "1rem", borderColor: "#4B3F72" }}
           />
-          <button onClick={handleCreateNickname} style={{ padding: "0.5rem 1rem" }}>
+          <button
+            onClick={handleCreateNickname}
+            style={{
+              padding: "0.5rem 1rem",
+              backgroundColor: "#4B3F72",
+              color: "#fff",
+              border: "none",
+              cursor: "pointer",
+            }}
+          >
             Create Nickname
           </button>
         </>
@@ -116,7 +125,7 @@ export default function CheckIn() {
             type="text"
             value={nickname}
             onChange={(e) => setNickname(e.target.value)}
-            style={{ padding: "0.5rem", width: "250px" }}
+            style={{ padding: "0.5rem", width: "250px", borderColor: "#4B3F72" }}
           />
 
           {nickname && filtered.length > 0 && (
@@ -149,7 +158,14 @@ export default function CheckIn() {
 
           <button
             onClick={handleCheckIn}
-            style={{ padding: "0.5rem 1rem", marginTop: "1rem" }}
+            style={{
+              padding: "0.5rem 1rem",
+              marginTop: "1rem",
+              backgroundColor: "#4B3F72",
+              color: "#fff",
+              border: "none",
+              cursor: "pointer",
+            }}
           >
             Check In
           </button>
