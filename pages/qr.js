@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import QRCode from "qrcode.react";
+import QRCode from "qrcode";
 
 export default function QRPage() {
   const [qrDataUrl, setQrDataUrl] = useState("");
