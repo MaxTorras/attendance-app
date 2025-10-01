@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-const ADMIN_NICKNAMES = ["Carlos", "Jamie"]; // change to your admins
+const ADMIN_NICKNAMES = ["MaxTorras", "XaviSala"]; // change to your admins
 const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
 
 export default function AdminLogin() {
