@@ -25,3 +25,10 @@ export default async function handler(req, res) {
     res.status(500).json({ error: error.message });
   }
 }
+
+export default function handler(req, res) {
+  // For now, return hardcoded nicknames to test
+  const nicknames = ["Carlos", "Jamie", "Leo", "Omar"];
+
+  res.status(200).json({ nicknames });
+}
