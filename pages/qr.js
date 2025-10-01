@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
+import QRCode from "qrcode.react";
 
 export default function QRPage() {
   const [nicknames, setNicknames] = useState([]);
   const [selectedNickname, setSelectedNickname] = useState("");
   const [message, setMessage] = useState("");
+
+  // Replace this with your deployed check-in page URL
+  const checkInUrl = "https://attendance-app-ebon-ten.vercel.app/qr"; 
 
   // Get today's date in YYYY-MM-DD format
   const today = new Date().toISOString().split("T")[0];
@@ -51,6 +55,13 @@ export default function QRPage() {
   return (
     <div style={{ padding: "2rem" }}>
       <h1>Attendance QR Check-in</h1>
+
+      {/* QR Code */}
+      <div style={{ margin: "1rem 0" }}>
+        <QRCode value={checkInUrl} size={256} />
+        <p>Scan this QR code with your phone to open the check-in page</p>
+      </div>
+
       <p>Date: {today}</p>
 
       <label htmlFor="nickname">Select your nickname:</label>
