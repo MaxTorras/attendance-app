@@ -1,3 +1,8 @@
 export default function Home() {
-  return <h1>Welcome to the Attendance App 🚀</h1>;
+  return (
+    <div style={{ padding: "2rem" }}>
+      <h1>Attendance App</h1>
+      <p>Scan the QR code to check in.</p>
+    </div>
+  );
 }
